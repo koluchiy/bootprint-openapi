@@ -9,14 +9,17 @@
     </div>
 </div>
 <div class="row">
+    <div class="col-md-6 sw-response-model">{{>swagger/model model=response.schema}}</div>
+</div>
+<div class="row">
     {{#each response.examples}}
-        <div class="col-md-6 sw-response-examples">
+        <div class="col-md-12 sw-response-examples">
             <div class="label label-default">Example for {{@key}}</div>
             {{swagger--example . @key}}
         </div>
     {{/each}}
-    
-    <div class="col-md-6 sw-response-model">{{>swagger/model model=response.schema}}</div>
+</div>
+<div class="row">    
 
     {{#if response.headers}}
         <div class="col-md-12">
